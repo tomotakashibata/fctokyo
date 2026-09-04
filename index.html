@@ -742,23 +742,23 @@
   .tb-fetch-btn:hover{background:rgba(255,255,255,.18)}
   .tb-fetch-btn:disabled{opacity:.55;cursor:default}
   .tb-fetch-note{font-size:.66rem;color:var(--muted)}
-  .tb-head{display:grid;grid-template-columns:38px 1fr auto;gap:8px;padding:8px 10px;font-size:.68rem;letter-spacing:.14em;color:var(--text);font-weight:700;text-transform:uppercase}
-  .tb-head>div:last-child{text-align:right}
+  .tb-head{display:grid;grid-template-columns:44px 1fr 132px;gap:8px;padding:8px 10px;font-size:.7rem;letter-spacing:.14em;color:var(--text);font-weight:700;text-transform:uppercase}
+  .tb-head>div:last-child{text-align:left}
   .tb-list{background:#fff;border:1px solid #E5E8F0;border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 20px rgba(5,10,40,.22)}
-  .tb-row{display:grid;grid-template-columns:38px 1fr auto;gap:8px;align-items:center;padding:10px;border-top:1px solid #EEF0F6}
+  .tb-row{display:grid;grid-template-columns:44px 1fr 132px;gap:8px;align-items:center;padding:11px 10px;border-top:1px solid #EEF0F6}
   .tb-row:first-child{border-top:none}
   .tb-row.hit{background:linear-gradient(90deg,rgba(232,184,75,.22),rgba(232,184,75,.06))}
   .tb-row.mine{box-shadow:inset 4px 0 0 var(--blue)}
   .tb-row.hit.mine{box-shadow:inset 4px 0 0 var(--red)}
-  .tb-rank{font-family:'Oswald';font-weight:700;font-size:1.15rem;color:#16213E;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1px}
+  .tb-rank{font-family:'Oswald';font-weight:700;font-size:1.35rem;color:#16213E;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1px}
   /* 前節と比べた順位の動き */
-  .tb-move{font-family:'Oswald';font-weight:700;font-size:.6rem;line-height:1}
+  .tb-move{font-family:'Oswald';font-weight:700;font-size:.66rem;line-height:1}
   .tb-move.up{color:#2E9E5B}
   .tb-move.down{color:#C0392B}
   .tb-move.same{color:#C3C9D8}
-  .tb-team{display:flex;align-items:center;gap:6px;font-size:.88rem;font-weight:700;color:#16213E}
-  .tb-team .team-crest{width:20px;height:20px}
-  .tb-stat{font-size:.68rem;color:#6B7488;margin-top:2px}
+  .tb-team{display:flex;align-items:center;gap:7px;font-size:1rem;font-weight:700;color:#16213E}
+  .tb-team .team-crest{width:24px;height:24px}
+  .tb-stat{font-size:.74rem;color:#6B7488;margin-top:3px}
   .tb-stat b{font-family:'Oswald';font-size:.85rem;color:#16213E}
   .tb-mid{text-align:center}
   .tb-hit{font-size:.62rem;font-weight:700;background:var(--gold);color:#1B2340;padding:3px 8px;border-radius:99px;white-space:nowrap}
@@ -766,22 +766,23 @@
   .tb-diff.up{color:#2E9E5B}
   .tb-diff.down{color:#C0392B}
   .tb-diff.same{color:#B7BECB}
-  .tb-pred{display:flex;align-items:center;justify-content:flex-end;gap:8px;font-size:.88rem;color:#16213E}
+  .tb-pred{display:grid;grid-template-columns:26px 22px 1fr;align-items:center;gap:6px;font-size:.95rem;color:#16213E}
   .tb-pred .tb-prank{
-    font-family:'Oswald';font-weight:700;font-size:1.15rem;color:#16213E;
-    min-width:22px;text-align:center;flex:none;
+    font-family:'Oswald';font-weight:700;font-size:1.3rem;color:#16213E;
+    text-align:right;
   }
-  .tb-pred .team-crest{width:20px;height:20px;flex:none}
-  .tb-pred .tb-pteam{font-size:.88rem;font-weight:700;color:#16213E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .tb-pred .team-crest{width:22px;height:22px}
+  .crest-blank{display:inline-block;background:transparent}
+  .tb-pred .tb-pteam{font-size:.95rem;font-weight:700;color:#16213E;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .tb-pred.mine .tb-pteam{color:var(--navy)}
-  .tb-pred .tb-diff{margin-left:auto;flex:none}
   @media (max-width:560px){
-    .tb-head,.tb-row{grid-template-columns:28px 1fr auto;gap:5px;padding:9px 6px}
-    .tb-team{font-size:.8rem}
-    .tb-pred{gap:6px}
-    .tb-pred .tb-prank{font-size:1.05rem;min-width:18px}
-    .tb-pred .tb-pteam{font-size:.8rem}
-    .tb-stat{font-size:.62rem}
+    .tb-head,.tb-row{grid-template-columns:34px 1fr 108px;gap:6px;padding:10px 6px}
+    .tb-team{font-size:.9rem}
+    .tb-pred{grid-template-columns:22px 20px 1fr;gap:5px}
+    .tb-pred .tb-prank{font-size:1.15rem}
+    .tb-pred .team-crest{width:20px;height:20px}
+    .tb-pred .tb-pteam{font-size:.86rem}
+    .tb-stat{font-size:.68rem}
     .mb-days{font-size:.85rem;padding:6px 14px}
     .mb-days.soon{font-size:.9rem;padding:7px 18px}
   }
@@ -1310,7 +1311,14 @@
   .preview .pv{position:relative;width:64px;height:64px}
   .preview img{width:64px;height:64px;object-fit:cover;border-radius:8px;border:1px solid #D8DCE8}
   .preview .rm{position:absolute;top:-6px;right:-6px;background:var(--red);border:none;color:#fff;width:20px;height:20px;border-radius:50%;font-size:.7rem;line-height:1}
-  .modal-foot{padding:16px 22px 22px;display:flex;gap:10px}
+  /* 保存ボタンは常に見える位置に固定する（長い入力でも下までスクロールせずに押せる） */
+  .modal-foot{
+    padding:14px 22px calc(14px + env(safe-area-inset-bottom));
+    display:flex;gap:10px;
+    position:sticky;bottom:0;z-index:3;
+    background:var(--bg2);border-top:1px solid var(--line);
+    border-radius:0 0 18px 18px;
+  }
   /* 共有カード */
   .share-preview{margin:14px 0;border-radius:12px;overflow:hidden;background:#0B1638;min-height:120px;display:flex;align-items:center;justify-content:center}
   .share-preview img{width:100%;display:block}
@@ -3925,7 +3933,9 @@ function renderTable(){
                       : `<span class="tb-move same">−</span>`;
       }
     }
-    const predCrest = predTeam ? (crestImgTag(predTeam) || (predIsMine ? tokyoCrestTag() : "")) : "";
+    // 列をそろえるため、エンブレムが無い場合も空の枠を置く
+    const predCrest = (predTeam ? (crestImgTag(predTeam) || (predIsMine ? tokyoCrestTag() : "")) : "")
+                    || `<span class="team-crest crest-blank"></span>`;
 
     return `<div class="tb-row ${hit?"hit":""} ${isMine?"mine":""}">
       <div class="tb-rank">${esc(String(t.rank))}${moveTag}</div>
@@ -5443,7 +5453,17 @@ function resetPredPositions(rid){
 const CRESTS_KEY = "matchday_tokyo_crests";
 function loadCrests(){ try{ const raw = localStorage.getItem(CRESTS_KEY); return raw?JSON.parse(raw):{}; }catch(e){ return {}; } }
 function saveCrests(map){ try{ localStorage.setItem(CRESTS_KEY, JSON.stringify(map)); }catch(e){} }
-function getCrest(teamName){ const m = loadCrests(); return m[teamName] || null; }
+function getCrest(teamName){
+  const m = loadCrests();
+  const name = String(teamName||"").trim();
+  if(!name) return null;
+  if(m[name]) return m[name];
+  // 「川崎」と「川崎F」のように表記が揺れていても拾えるようにする
+  const keys = Object.keys(m);
+  const hit = keys.find(k=>k===name)
+           || keys.find(k=>k.startsWith(name) || name.startsWith(k));
+  return hit ? m[hit] : null;
+}
 function crestImgTag(teamName){
   const src = getCrest(teamName);
   return src ? `<img class="team-crest" src="${src}" alt="">` : "";
@@ -5497,7 +5517,6 @@ $("#lightbox").onclick = ()=>$("#lightbox").classList.remove("show");
 $("#closeModal").onclick = closeModal;
 $("#cancelBtn").onclick = closeModal;
 $("#saveBtn").onclick = saveRecord;
-$("#overlay").onclick = e=>{ if(e.target===$("#overlay")) closeModal(); };
 $("#srcSchedule").onclick = ()=>setSource("schedule");
 $("#srcManual").onclick = ()=>setSource("manual");
 $("#scheduleSel").onchange = applySchedulePick;
@@ -5533,7 +5552,6 @@ $("#saveSquadBtn").onclick = saveSquad;
 $("#closePredSquad").onclick = closePredSquadModal;
 $("#cancelPredSquad").onclick = closePredSquadModal;
 $("#savePredSquadBtn").onclick = savePredSquad;
-$("#predSquadOverlay").onclick = e=>{ if(e.target===$("#predSquadOverlay")) closePredSquadModal(); };
 $("#openPredSquadBtn").onclick = ()=>{
   if(!editingId){ toast("先に記録を保存してください"); return; }
   const id = editingId;
@@ -5558,12 +5576,10 @@ $("#clearPick").onclick = ()=>{
   $$("#playerPicker .pk-item").forEach(el=>refreshPickerItem(el, undefined));
   updatePickCounts();
 };
-$("#squadOverlay").onclick = e=>{ if(e.target===$("#squadOverlay")) closeSquadModal(); };
 $("#closeRate").onclick = closeRateModal;
 $("#bulkFillBtn").onclick = bulkFillRatings;
 $("#cancelRate").onclick = closeRateModal;
 $("#saveRateBtn").onclick = saveRating;
-$("#rateOverlay").onclick = e=>{ if(e.target===$("#rateOverlay")) closeRateModal(); };
 $("#editSquadFromRate").onclick = ()=>{ const id=ratingEditingId; closeRateModal(); if(id) openSquadModal(id); };
 $("#crestBtn").onclick = ()=>$("#crestInput").click();
 $("#crestInput").onchange = e=>{ if(e.target.files[0]) setLogo(e.target.files[0]); };
